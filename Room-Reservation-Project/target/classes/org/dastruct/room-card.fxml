@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+
+<VBox fx:id="roomCardVBox"
+      spacing="15"
+      style="-fx-background-color: white;
+             -fx-border-color: #6B8E3A;
+             -fx-border-width: 2;
+             -fx-padding: 20;
+             -fx-background-radius: 12;
+             -fx-border-radius: 12;
+             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.dastruct.RoomCardController"
+      prefWidth="280"
+      maxWidth="280">
+
+    <!-- Room Header -->
+    <VBox spacing="5">
+        <Label fx:id="roomNameLabel"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+               wrapText="true" />
+        <Label fx:id="roomTypeLabel"
+               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-font-weight: bold;" />
+    </VBox>
+
+    <!-- Status Indicator -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Circle fx:id="statusCircle"
+                radius="6"
+                style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);" />
+        <Label fx:id="statusLabel"
+               style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+    </HBox>
+
+    <!-- Room Details -->
+    <VBox spacing="8">
+        <Label fx:id="capacityLabel"
+               style="-fx-font-size: 13px; -fx-text-fill: #5d6d7e;" />
+        <Label fx:id="reservationLabel"
+               style="-fx-font-size: 13px; -fx-text-fill: #5d6d7e;"
+               wrapText="true" />
+    </VBox>
+
+    <!-- Spacer -->
+    <Region VBox.vgrow="ALWAYS" />
+
+    <!-- Action Buttons -->
+    <HBox spacing="12">
+        <Button fx:id="reserveButton"
+                text="Reserve"
+                onAction="#onReserve"
+                style="-fx-background-color: #3498db;
+                       -fx-text-fill: white;
+                       -fx-border-radius: 8;
+                       -fx-background-radius: 8;
+                       -fx-padding: 10 16;
+                       -fx-font-size: 13px;
+                       -fx-font-weight: bold;"
+                HBox.hgrow="ALWAYS" />
+
+        <Button fx:id="changeStatusButton"
+                text="Status"
+                onAction="#onChangeStatus"
+                style="-fx-background-color: #6B8E3A;
+                       -fx-text-fill: white;
+                       -fx-border-radius: 8;
+                       -fx-background-radius: 8;
+                       -fx-padding: 10 16;
+                       -fx-font-size: 13px;
+                       -fx-font-weight: bold;"
+                HBox.hgrow="ALWAYS" />
+    </HBox>
+</VBox>

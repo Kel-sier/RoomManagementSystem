@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.Region?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.dastruct.ChangeStatusController"
+      spacing="20"
+      style="-fx-padding: 30; -fx-background-color: #fafafa; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+
+    <!-- Header -->
+    <Label text="Change Room Status"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-padding: 0 0 10 0;" />
+
+    <!-- Status Section -->
+    <VBox spacing="8">
+        <Label text="Status"
+               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5d6d7e;" />
+        <ComboBox fx:id="statusComboBox"
+                  style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12; -fx-font-size: 14px;"
+                  prefWidth="280" />
+    </VBox>
+
+    <!-- Duration Section -->
+    <VBox spacing="15">
+        <Label text="Duration"
+               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5d6d7e;" />
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <VBox spacing="5">
+                <Label text="Hours"
+                       style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;" />
+                <Spinner fx:id="durationHourSpinner"
+                         prefWidth="100"
+                         style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8;" />
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Minutes"
+                       style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;" />
+                <Spinner fx:id="durationMinuteSpinner"
+                         prefWidth="100"
+                         style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8;" />
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <!-- Spacer -->
+    <Region VBox.vgrow="ALWAYS" />
+
+    <!-- Action Buttons -->
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button text="Cancel"
+                fx:id="cancelButton"
+                onAction="#onCancelButtonClick"
+                style="-fx-background-color: transparent; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 24; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5d6d7e;" />
+        <Button text="Save Changes"
+                fx:id="saveButton"
+                onAction="#onSaveButtonClick"
+                style="-fx-background-color: #3498db; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 24; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white;" />
+    </HBox>
+</VBox>

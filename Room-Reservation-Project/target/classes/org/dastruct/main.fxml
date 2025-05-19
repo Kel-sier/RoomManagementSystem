@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<ScrollPane fx:id="scrollPane"
+            fitToWidth="true"
+            style="-fx-background-color: #f8f9fa; -fx-background: #f8f9fa;"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.dastruct.MainController">
+
+    <VBox prefHeight="600.0" prefWidth="800.0" spacing="0" style="-fx-background-color: #f8f9fa;">
+
+        <!-- Modern Menu Bar -->
+        <MenuBar style="-fx-background-color: white; -fx-border-color: transparent transparent #ecf0f1 transparent; -fx-border-width: 0 0 1 0;">
+            <Menu text="File" style="-fx-font-size: 14px; -fx-padding: 10;">
+                <MenuItem fx:id="importMenuItem"
+                          onAction="#onImportRooms"
+                          text="Import Rooms (CSV)"
+                          style="-fx-padding: 8 16;" />
+                <MenuItem fx:id="exportMenuItem"
+                          onAction="#onExportRooms"
+                          text="Export Rooms (CSV)"
+                          style="-fx-padding: 8 16;" />
+            </Menu>
+        </MenuBar>
+
+        <!-- Header Section -->
+        <VBox spacing="20" style="-fx-padding: 30 30 20 30; -fx-background-color: white;">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label text="Room Management"
+                           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    <Label text="Manage and monitor all rooms in your facility"
+                           style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" />
+                </VBox>
+            </HBox>
+
+            <!-- Modern Search Bar -->
+            <TextField fx:id="searchField"
+                       onKeyReleased="#onSearch"
+                       promptText="Search rooms by name, type, or status..."
+                       style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-font-size: 14px; -fx-prompt-text-fill: #adb5bd;"
+                       prefHeight="50" />
+        </VBox>
+
+        <!-- Room Cards Container -->
+        <VBox style="-fx-padding: 0 30 30 30; -fx-background-color: #f8f9fa;">
+            <FlowPane fx:id="roomFlow"
+                      alignment="TOP_LEFT"
+                      hgap="25"
+                      vgap="25"
+                      style="-fx-padding: 20 0 0 0;">
+                <!-- Room cards will be dynamically added here -->
+            </FlowPane>
+        </VBox>
+    </VBox>
+</ScrollPane>
